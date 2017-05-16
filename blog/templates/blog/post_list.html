@@ -1,13 +1,23 @@
 {% extends 'blog/base.html' %}
+{% load static %}
 {% block content %}
     {% for post in object_list %}
-        <p>
-            <i class="fa fa-calendar" aria-hidden="true"></i>
-            {{ post.datetime }}</p>
-        <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
-        <p>{{ post.content  |truncatechars:'400' }}</p>
+<div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+                    <div class="mdl-card__media">
+                        <img class="article-image" src="{% static 'img/portfolio1.jpg' %}" border="0" alt="">
+                    </div>
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">
+                            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                        </h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <p><b>{{ post.datetime }}</b></p>
+                        {{ post.content  |truncatechars:'200' }}
+                        </div>
+                </div>
     {% empty %}
-    <p>Нет постов</p>
+    <p>Нажаль, нічого не знайдено :( </p>
     {% endfor %}
 
 {% endblock %}
