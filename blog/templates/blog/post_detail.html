@@ -1,8 +1,28 @@
 {% extends 'blog/base.html' %}
+{% load static %}
 {% block content %}
-    <p>
-        <i class="fa fa-calendar" aria-hidden="true"></i>
-        {{ post.datetime }}</p>
-    <h2>{{ post.title }}</h2>
-    <p>{{ post.content }}</p>
+
+
+
+          <div class="mdl-grid site-max-width">
+            <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp page-content">
+              <div class="mdl-card__title">
+                <h1 class="mdl-card__title-text"> Home > Post </h1>
+              </div>
+              <div class="mdl-card__media"><img class="article-image" src="{% static 'img/about.jpg' %}" border="0" alt="About">
+              </div>
+              <div class="mdl-grid site-copy">
+                <div class="mdl-cell mdl-cell--12-col"><h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">
+                    {{ post.title }}</h3>
+<div class="mdl-cell mdl-cell--8-col mdl-card__supporting-text no-padding ">
+    {{ post.content }}
+</div>
+
+<h4 class="mdl-cell mdl-cell--12-col mdl-typography--headline">{{ post.datetime }}</h4>
+
+</div>
+              </div>
+            </div>
+          </div>
+          </div>
 {% endblock %}
