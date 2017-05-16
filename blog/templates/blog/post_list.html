@@ -1,7 +1,9 @@
 {% extends 'blog/base.html' %}
 {% block content %}
     {% for post in object_list %}
-        <p>{{ post.datetime }}</p>
+        <p>
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+            {{ post.datetime }}</p>
         <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
         <p>{{ post.content  |truncatechars:'400' }}</p>
     {% empty %}
