@@ -1,6 +1,8 @@
 {% extends 'blog/base.html' %}
 {% block content %}
-    <p>{{ post.datetime }}</p>
+    <p>
+        <i class="fa fa-calendar" aria-hidden="true"></i>
+        {{ post.datetime }}</p>
     <h2>{{ post.title }}</h2>
     <p>{{ post.content }}</p>
 {% endblock %}
