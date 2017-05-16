@@ -1,17 +1,16 @@
 <!DOCTYPE html>
+{% load i18n %}
 {% load static %}
 <html lang="{{ LANGUAGE_CODE }}">
     <head>
         <meta charset="utf-8" />
-        <title>Blog - MartaCH</title>
+        <title>{% block title %} Blog - MartaCH {% endblock %}</title>
+         {% block description %}<meta name="description" content="blog">{% endblock %}
         <link href="{% static 'bootstrap/css/bootstrap.css' %}"  rel="stylesheet">
         <style>
-            body {
-                padding-top: 60px;
-            }
+            body { padding-top: 60px;  }
         </style>
         <link href="{% static 'bootstrap/css/bootstrap-responsive.css' %}" rel="stylesheet">
-
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
